@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Nome do Estúdio | Barbearia em Cidade</title>
+<meta name="description" content="Barbearia em Cidade para o homem que sabe o que quer. Corte, ritual de barba, coloração e tratamentos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0F0E0D;--surface:#1A1816;--surface-2:#23201D;--line:#3A3631;
+  --text:#EDE8DB;--text-muted:#A8A296;
+  --accent:#B8935A;--accent-hover:#9E7C48;--on-accent:#0F0E0D;--accent-text:#D2AE76;--ring:#EDE8DB;
+  --font-display:'Barlow Condensed','Arial Narrow',sans-serif;
+  --font-body:'Barlow',system-ui,sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,monospace;
+  --s1:4px;--s2:8px;--s3:12px;--s4:16px;--s5:24px;--s6:32px;--s7:48px;--s8:64px;--s9:96px;
+  --pad:clamp(16px,4vw,48px);
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--text);font:400 clamp(16px,1.1vw + 11px,18px)/1.55 var(--font-body);overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ring);outline-offset:3px}
+.wrap{max-width:1440px;margin:0 auto;padding:0 var(--pad)}
+.mono{font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.08em;font-size:12.5px}
+.muted{color:var(--text-muted)}
+h1,h2,h3{font-family:var(--font-display);text-transform:uppercase;font-weight:700;letter-spacing:-.005em}
+h2{font-size:clamp(44px,6vw,92px);line-height:.92}
+h3{font-size:clamp(24px,2.4vw,30px);line-height:1.1;font-weight:600}
+section{padding:var(--s8) 0}
+@media(min-width:900px){section{padding:var(--s9) 0}}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 26px;border-radius:999px;border:1px solid var(--text);background:transparent;color:var(--text);font:500 13px/1 var(--font-mono);text-transform:uppercase;letter-spacing:.08em;text-decoration:none;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.btn:hover{background:var(--text);color:var(--bg)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn.primary:hover{background:var(--accent-hover);border-color:var(--accent-hover);color:var(--on-accent)}
+.link{font-family:var(--font-mono);font-size:13px;text-transform:uppercase;letter-spacing:.08em;text-underline-offset:5px;cursor:pointer}
+.link:hover{color:var(--accent-text)}
+
+/* header */
+header{position:fixed;inset:0 0 auto 0;z-index:20;transition:background .25s}
+header.solid{background:rgba(15,14,13,.94)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;height:84px}
+.logo{display:flex;flex-direction:column;line-height:1;text-decoration:none;font-family:var(--font-display);font-weight:700;font-size:30px;letter-spacing:.02em}
+.logo small{font:400 9px var(--font-mono);letter-spacing:.2em;color:var(--text-muted);margin-top:4px}
+nav ul{display:flex;gap:8px;list-style:none;padding:0}
+nav a.pill{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border:1px solid var(--text);border-radius:999px;font:500 12.5px var(--font-mono);text-transform:uppercase;letter-spacing:.08em;text-decoration:none;transition:background .2s,color .2s;cursor:pointer}
+nav a.pill:hover,nav a.pill.on{background:var(--text);color:var(--bg)}
+.menu-btn{display:none;min-height:44px;min-width:44px;border:1px solid var(--text);border-radius:999px;background:none;color:var(--text);font:500 12.5px var(--font-mono);text-transform:uppercase;letter-spacing:.08em;cursor:pointer;padding:0 16px}
+.head-cta{display:inline-flex}
+@media(max-width:1060px){
+  .menu-btn{display:inline-flex;align-items:center}
+  .head-cta{display:none}
+  nav{position:fixed;inset:84px 0 auto 0;background:var(--bg);padding:var(--s4) var(--pad) var(--s6);border-bottom:1px solid var(--line);display:none}
+  nav.open{display:block}
+  nav ul{flex-direction:column}
+  nav a.pill{width:100%;justify-content:space-between}
+}
+
+/* hero */
+.hero{min-height:100svh;position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:84px 0 var(--s5);background:
+  radial-gradient(ellipse 60% 50% at 50% 62%,#201c19 0%,transparent 70%),var(--bg);overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;opacity:.07;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+.hero .top,.hero .bottom{position:relative;display:flex;justify-content:space-between;gap:16px}
+.hero .word{position:relative;font-family:var(--font-display);font-weight:700;text-transform:uppercase;line-height:.82;letter-spacing:-.02em;font-size:clamp(110px,31vw,470px);text-align:center;color:var(--text);margin:0 -.04em;white-space:nowrap}
+.hero .word span{color:var(--text)}
+
+.wordbox{position:relative;padding-bottom:clamp(30px,6vw,90px)}
+.scribble{position:absolute;left:5%;bottom:0;transform:rotate(-6deg);font-family:var(--font-display);font-weight:700;text-transform:uppercase;font-size:clamp(26px,5vw,76px);line-height:.9;color:var(--text);text-shadow:0 3px 0 rgba(15,14,13,.55),0 0 18px rgba(15,14,13,.6);mix-blend-mode:normal;pointer-events:none}
+.scribble::after{content:"";display:block;height:5px;width:70%;margin-top:6px;background:var(--accent);transform:skewX(-30deg)}
+.hero-mid{position:relative;flex:1;display:flex;flex-direction:column;justify-content:center}
+.hero-copy{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-top:var(--s6)}
+.hero-copy p{max-width:34ch;font-size:clamp(17px,1.5vw,22px)}
+.hero .bottom{align-items:flex-end;flex-wrap:wrap}
+@media(max-width:700px){.hero-copy{flex-direction:column;align-items:flex-start}.scribble{left:2%}}
+
+/* price list */
+.prices-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:var(--s7)}
+.row{display:grid;grid-template-columns:56px 1fr auto;gap:var(--s4) var(--s5);align-items:baseline;padding:var(--s5) var(--s3);border-top:1px solid var(--line);transition:background .2s}
+.row:last-of-type{border-bottom:1px solid var(--line)}
+.row:hover{background:var(--surface)}
+.row .n{color:var(--text-muted)}
+.row p{grid-column:2;color:var(--text-muted);font-size:15px;line-height:1.5;max-width:62ch}
+.row .price{font:500 clamp(20px,2vw,24px)/1 var(--font-mono);white-space:nowrap}
+.row:hover .price{color:var(--accent-text)}
+.note{margin-top:var(--s4)}
+@media(max-width:560px){.row{grid-template-columns:36px 1fr auto;padding:var(--s4) 0}}
+
+/* split blocks */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,80px);align-items:center}
+@media(max-width:860px){.split{grid-template-columns:1fr}}
+.ph{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:2px;display:flex;align-items:flex-end;padding:var(--s4);overflow:hidden;
+  background-image:repeating-linear-gradient(135deg,transparent 0 14px,rgba(237,232,219,.025) 14px 15px)}
+.ph span{color:var(--text-muted)}
+.ph.tall{aspect-ratio:4/5}
+/* real photos: one shared tone so every shot looks the same, still in colour */
+.photo{position:relative;overflow:hidden;border-radius:2px;margin:0;background:var(--surface)}
+.photo img{display:block;width:100%;height:100%;object-fit:cover;filter:sepia(.5) saturate(.85) contrast(1.08) brightness(.84);transition:transform .8s cubic-bezier(.22,.8,.3,1)}
+.photo::after{content:"";position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply;background:linear-gradient(160deg,rgba(150,70,40,.14),rgba(15,14,13,.42))}
+.photo:hover img{transform:scale(1.035)}
+@media(prefers-reduced-motion:reduce){.photo img{transition:none}.photo:hover img{transform:none}}
+.ph.wide{aspect-ratio:16/10}
+.facts{display:grid;gap:0;margin-top:var(--s6);list-style:none;padding:0}
+.facts li{display:flex;justify-content:space-between;gap:16px;padding:var(--s3) 0;border-top:1px solid var(--line)}
+.facts li:last-child{border-bottom:1px solid var(--line)}
+.facts b{font:500 14px var(--font-mono);color:var(--accent-text);white-space:nowrap}
+.about p+p{margin-top:var(--s4)}
+.about h2{margin-bottom:var(--s5)}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;margin-top:var(--s7)}
+.gal .ph,.gal .photo{min-height:200px}
+.gal .photo img{position:absolute;inset:0}.gal .g2{min-height:260px}.gal .g3,.gal .g4,.gal .g5{aspect-ratio:4/5}
+.g1{grid-column:span 7;aspect-ratio:16/10}.g2{grid-column:span 5}.g3{grid-column:span 4}.g4{grid-column:span 4}.g5{grid-column:span 4}
+@media(max-width:700px){.g1,.g2,.g3,.g4,.g5{grid-column:span 12}.g1{aspect-ratio:4/3}}
+
+/* contact */
+.big-contact a{display:block;font-family:var(--font-display);font-weight:600;text-transform:uppercase;font-size:clamp(34px,5vw,64px);line-height:1.05;text-decoration:none;padding:var(--s3) 0;border-top:1px solid var(--line);word-break:break-word}
+.big-contact a:last-of-type{border-bottom:1px solid var(--line)}
+.big-contact a:hover{color:var(--accent-text)}
+.cta-final{text-align:left;padding:var(--s9) 0}
+.cta-final h2{font-size:clamp(56px,10vw,170px);line-height:.85;margin-bottom:var(--s6)}
+footer{border-top:1px solid var(--line);padding:var(--s9) 0 var(--s5);overflow:hidden;position:relative}
+.f-top{display:grid;grid-template-columns:1fr 1.15fr 1.1fr 1fr;gap:var(--s7) var(--s6);align-items:start}
+.f-brand p{margin-top:var(--s4);max-width:30ch;color:var(--text-muted);line-height:1.5}
+.f-logo{font-family:var(--font-display);font-weight:700;text-transform:uppercase;font-size:clamp(40px,4.4vw,64px);line-height:.9;letter-spacing:.01em}
+.f-logo small{display:block;font-family:var(--font-mono);font-weight:400;font-size:11px;letter-spacing:.28em;color:var(--text-muted);margin-top:var(--s2)}
+.f-rating{white-space:nowrap;display:inline-flex;align-items:center;gap:var(--s2);margin-top:var(--s5);padding:var(--s2) var(--s4);border:1px solid var(--line);border-radius:999px;font-size:13px;text-decoration:none}
+.f-rating b{color:var(--accent-text);letter-spacing:.12em}
+.f-col h4{font-family:var(--font-mono);font-weight:400;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-muted);margin-bottom:var(--s4);padding-bottom:var(--s3);border-bottom:1px solid var(--line)}
+.f-col ul{list-style:none;margin:0;padding:0;display:grid;gap:var(--s3)}
+.f-col li{display:flex;justify-content:space-between;gap:var(--s4);font-size:15px}
+.f-col li span:last-child{font-family:var(--font-mono);font-size:13px;white-space:nowrap}
+.f-col li span:first-child{white-space:nowrap}
+.f-col li.off{color:var(--text-muted)}
+.f-col a{text-decoration:none;transition:color .2s}
+.f-col a:hover{color:var(--accent-text)}
+.f-col address{font-style:normal;line-height:1.6;font-size:15px}
+.f-col .f-book{display:inline-flex;align-items:center;justify-content:center;margin-top:var(--s5);padding:14px 28px;line-height:1;white-space:nowrap}
+.f-word{font-family:var(--font-display);font-weight:700;text-transform:uppercase;font-size:clamp(90px,24vw,380px);line-height:.78;letter-spacing:-.01em;color:transparent;-webkit-text-stroke:1px var(--line);margin-top:var(--s8);white-space:nowrap;user-select:none;text-align:center}
+.f-bottom{display:flex;justify-content:space-between;gap:var(--s4);flex-wrap:wrap;padding-top:var(--s5);margin-top:var(--s5);border-top:1px solid var(--line);font-size:12px}
+@media(max-width:900px){.f-top{grid-template-columns:1fr 1fr}.f-brand{grid-column:1/-1}}
+@media(max-width:560px){.f-top{grid-template-columns:1fr}}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .45s cubic-bezier(.22,.8,.3,1),transform .45s cubic-bezier(.22,.8,.3,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+.sr{position:absolute;left:-9999px}
+</style>
+</head>
+<body>
+<a class="sr" href="#main">Saltar para o conteúdo</a>
+
+<header id="hd">
+  <div class="wrap bar">
+    <a class="logo" href="#top" aria-label="Nome do Estúdio, início"><span>NOME</span><small>BARBER STUDIO</small></a>
+    <nav id="nav" aria-label="Principal">
+      <ul>
+        <li><a class="pill on" href="#top">Home</a></li>
+        <li><a class="pill" href="#sobre">A empresa</a></li>
+        <li><a class="pill" href="#barbeiro">Barbeiro</a></li>
+        <li><a class="pill" href="#servicos">Serviços</a></li>
+        <li><a class="pill" href="#galeria">Galeria</a></li>
+        <li><a class="pill" href="#contactos">Contactos</a></li>
+      </ul>
+    </nav>
+    <a class="btn primary head-cta" href="#contactos">Marque connosco</a>
+    <button class="menu-btn" id="mb" aria-expanded="false" aria-controls="nav">Menu</button>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" id="top" style="padding-top:84px;padding-bottom:var(--s5)">
+  <div class="wrap" style="width:100%">
+    <div class="top mono"><span>Desde 20XX<br>Cidade</span><span style="text-align:center">Barbearia<br>Barber Studio</span><span style="text-align:right">Nome da Rua 00<br>0000-000</span></div>
+  </div>
+  <div class="hero-mid">
+    <div class="wordbox">
+      <div class="word" aria-hidden="true">NOME</div>
+      <div class="scribble" aria-hidden="true">Mais do que<br>uma barbearia</div>
+    </div>
+    <h1 class="sr">Nome do Estúdio</h1>
+    <div class="wrap" style="width:100%"><div class="hero-copy">
+      <p>Para o homem que sabe o que quer.</p>
+      <a class="btn primary" href="#contactos">Marque connosco &rarr;</a>
+    </div></div>
+  </div>
+  <div class="wrap" style="width:100%">
+    <div class="bottom mono muted"><span>Corte &middot; Barba &middot; Coloração</span><a class="link" href="#servicos" style="color:var(--text)">Ver serviços</a></div>
+  </div>
+</section>
+
+<section id="sobre" class="about">
+  <div class="wrap split">
+    <div class="rv">
+      <p class="mono muted" style="margin-bottom:var(--s4)">A empresa</p>
+      <h2>Um espaço diferente para o homem de hoje</h2>
+      <p style="margin-top:var(--s5)">O Nome do Estúdio nasceu em 20XX, pela mão de Nome Apelido, que acreditava ser necessário na sua cidade um espaço dedicado ao homem que sabe o que quer e sabe que a imagem conta para o sucesso pessoal e profissional.</p>
+      <p>De cortes de cabelo e barba a coloração e alisamento, a prioridade é dar ao cliente um momento de relaxamento, num ambiente requintado e único.</p>
+    </div>
+    <div class="ph wide rv" role="img" aria-label="Espaço reservado para foto do interior"><span class="mono">Foto do interior</span></div>
+  </div>
+</section>
+
+<section id="servicos">
+  <div class="wrap">
+    <div class="prices-head rv">
+      <h2>Serviços</h2>
+      <a class="btn primary" href="#contactos">Marque connosco</a>
+    </div>
+    <div class="rv">
+      <div class="row"><span class="n mono">01</span><h3>Corte de cabelo</h3><span class="price">00,00 €</span><p>Do clássico ao arrojado, adaptado ao estilo e à personalidade de cada cliente.</p></div>
+      <div class="row"><span class="n mono">02</span><h3>Ritual de barba</h3><span class="price">00,00 €</span><p>Barboterapia com vaporizador de ozono, toalha quente, massagem facial e barba à navalha.</p></div>
+      <div class="row"><span class="n mono">03</span><h3>Corte &amp; barba à máquina</h3><span class="price">00,00 €</span><p>O pacote 2 em 1: corte de cabelo e design da barba à máquina.</p></div>
+      <div class="row"><span class="n mono">04</span><h3>Corte &amp; ritual de barba</h3><span class="price">00,00 €</span><p>Corte de cabelo e barba à navalha, para cuidar da imagem por inteiro.</p></div>
+      <div class="row"><span class="n mono">05</span><h3>Coloração</h3><span class="price">00,00 €</span><p>Uma nova tonalidade, ou só disfarçar os brancos indesejados.</p></div>
+      <div class="row"><span class="n mono">06</span><h3>Botox capilar</h3><span class="price">00,00 €</span><p>Hidratação profunda e reconstrução da fibra: cabelo mais denso, brilhante e fácil de pentear.</p></div>
+      <div class="row"><span class="n mono">07</span><h3>Alisamento</h3><span class="price">00,00 €</span><p>Para mudar de visual e domar os caracóis.</p></div>
+      <div class="row"><span class="n mono">08</span><h3>Platinados &amp; madeixas</h3><span class="price">00,00 €</span><p>Para o homem que gosta de se distinguir. Várias soluções de descoloração.</p></div>
+      <p class="note mono muted">* Valores mínimos aplicáveis a estes serviços.</p>
+    </div>
+  </div>
+</section>
+
+<section id="barbeiro">
+  <div class="wrap split">
+    <div class="ph tall rv" role="img" aria-label="Espaço reservado para retrato do barbeiro"><span class="mono">Retrato do barbeiro</span></div>
+    <div class="rv">
+      <p class="mono muted" style="margin-bottom:var(--s4)">O barbeiro</p>
+      <h2>Nome Apelido</h2>
+      <p style="margin-top:var(--s5)">Qualificação profissional e experiência comprovada. Cada serviço é personalizado e inclui aconselhamento, para tirar o maior partido dos seus pontos fortes.</p>
+      <ul class="facts">
+        <li><span>Cabeleireiro profissional desde</span><b>20XX</b></li>
+        <li><span>Formador desde</span><b>20XX</b></li>
+        <li><span>Prémio ou certificação</span><b>20XX</b></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="galeria">
+  <div class="wrap">
+    <h2 class="rv">Galeria</h2>
+    <div class="gal rv">
+      <div class="ph g1" role="img" aria-label="Espaço reservado para foto"><span class="mono">Foto 01</span></div>
+      <div class="ph g2" role="img" aria-label="Espaço reservado para foto"><span class="mono">Foto 02</span></div>
+      <div class="ph g3" role="img" aria-label="Espaço reservado para foto"><span class="mono">Foto 03</span></div>
+      <div class="ph g4" role="img" aria-label="Espaço reservado para foto"><span class="mono">Foto 04</span></div>
+      <div class="ph g5" role="img" aria-label="Espaço reservado para foto"><span class="mono">Foto 05</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="wrap rv">
+    <h2>Pronto para<br>o próximo corte?</h2>
+    <a class="btn primary" href="#contactos">Marque connosco &rarr;</a>
+  </div>
+</section>
+
+<section id="contactos" style="padding-top:0">
+  <div class="wrap split" style="align-items:start">
+    <div class="big-contact rv">
+      <a href="tel:+351000000000">+351 000 000 000</a>
+      <a href="tel:+351000000001">+351 000 000 001</a>
+      <a href="mailto:hello@studio-name.pt" style="font-size:clamp(24px,3.4vw,44px)">hello@studio-name.pt</a>
+    </div>
+    <div class="rv">
+      <p class="mono muted" style="margin-bottom:var(--s3)">Morada</p>
+      <h3 style="font-size:clamp(30px,3.4vw,44px)">Nome da Rua, n.º 00<br>0000-000 Cidade</h3>
+      <p style="margin-top:var(--s5)" class="muted">Tem alguma dúvida ou sugestão? Ligue ou escreva, respondemos com gosto.</p>
+      <p style="margin-top:var(--s5)"><a class="btn" href="#">Abrir no mapa</a></p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="f-top">
+      <div class="f-brand">
+        <div class="f-logo">Nome<small>Barber Studio</small></div>
+        <p>Cortes clássicos e modernos, ritual de barba, degradê e tesoura. Desde 20XX.</p>
+        <a class="f-rating" href="#"><b>★★★★★</b><span style="white-space:nowrap">0,0 &middot; 000 avaliações</span></a>
+      </div>
+      <div class="f-col">
+        <h4>Horário</h4>
+        <ul>
+          <li><span>Seg. a Sex.</span><span>09:30 &ndash; 18:30</span></li>
+          <li><span>Sábado</span><span>09:30 &ndash; 13:00</span></li>
+          <li class="off"><span>Domingo</span><span>Fechado</span></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Contactos</h4>
+        <ul>
+          <li><a href="tel:+351000000000">+351 000 000 000</a></li>
+          <li><a href="tel:+351000000001">+351 000 000 001</a></li>
+          <li><a href="mailto:hello@studio-name.pt">hello@studio-name.pt</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Visite-nos</h4>
+        <address>Nome da Rua, n.º 00<br>0000-000 Cidade</address>
+        <ul style="margin-top:var(--s4)">
+          <li><a href="#">Como chegar &nearr;</a></li>
+          <li><a href="#">Instagram &nearr;</a></li>
+        </ul>
+        <a class="btn primary f-book" href="#contactos">Marque connosco</a>
+      </div>
+    </div>
+    <div class="f-bottom mono muted">
+      <span>&copy; 2026 Nome do Estúdio</span>
+      <span>Exemplo de portfólio, conteúdo ilustrativo</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var hd=document.getElementById('hd'),mb=document.getElementById('mb'),nav=document.getElementById('nav');
+  function sc(){hd.classList.toggle('solid',window.scrollY>40)}sc();addEventListener('scroll',sc,{passive:true});
+  mb.addEventListener('click',function(){var o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
+  nav.addEventListener('click',function(e){if(e.target.closest('a')){nav.classList.remove('open');mb.setAttribute('aria-expanded','false')}});
+  var links=[].slice.call(nav.querySelectorAll('a.pill')).filter(function(a){return a.getAttribute('href').charAt(0)==='#'});
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  function act(){var y=scrollY+140,i=0;secs.forEach(function(s,k){if(s&&s.offsetTop<=y)i=k});links.forEach(function(a,k){a.classList.toggle('on',k===i)})}
+  addEventListener('scroll',act,{passive:true});act();
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+    els.forEach(function(el){io.observe(el)});
+  }else{els.forEach(function(el){el.classList.add('in')})}
+})();
+</script>
+</body>
+</html>
